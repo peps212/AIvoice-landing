@@ -67,7 +67,7 @@ const Audio = () => {
             <img className='shadow-xl ' src="/image.png"></img>
             </div>
             <div className="container absolute w-9/12 h-16 bg-gray-800 border-4 border-white rounded-xl shado flex flex-row justify-between items-center text-center">
-                <button onClick={handlePlayPause} class="hover:bg-indigo-800 bg-indigo-600 h-10 w-10 ml-3 shrink-0 focus:outline-none rounded-full shadow-2xl grid"> {isPlaying ? <img className='w-5 h-5 place-self-center' src={"/pauseW.png"}></img> : <img className='w-5 h-5 ml-0.5 place-self-center' src={"/playW.png"} ></img> }</button>
+                <button onClick={handlePlayPause} class="hover:bg-blue-800 bg-blue-600 h-10 w-10 ml-3 shrink-0 focus:outline-none rounded-full shadow-2xl grid"> {isPlaying ? <img className='w-5 h-5 place-self-center' src={"/pauseW.png"}></img> : <img className='w-5 h-5 ml-0.5 place-self-center' src={"/playW.png"} ></img> }</button>
                 <div className='w-10/12 mx-4 grid'> 
             
                     <input  ref={progressBarRef} defaultValue="0" onChange={handleProgressBar} className="w-full h-1 bg-gray-600 rounded-lg appearance-none range-sm place-self-center " type="range" />

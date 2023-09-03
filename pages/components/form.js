@@ -54,7 +54,7 @@ const Form = () => {
           <label for="hero-field" class="leading-7 text-sm text-gray-400 ">Join The Waitlist</label>
           <input type="email" value={emailInput} onChange={(e) => {setEmailInput(e.target.value)}} id="hero-field" placeholder="Email" name="hero-field" class="w-full bg-gray-400 rounded border bg-opacity-40 border-indigo-200 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent shadow-2xl focus:border-indigo-500 text-base outline-none text-gray-800 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
         </div>
-        <button disabled={buttonLoading} class="inline-flex text-white bg-indigo-600 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-800 rounded text-lg shadow-2xl">Join</button>
+        <button disabled={buttonLoading} class="inline-flex text-white bg-blue-600 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-800 rounded text-lg shadow-2xl">Join</button>
     </form>
     )
 }
