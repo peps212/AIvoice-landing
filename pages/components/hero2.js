@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react"
 import Header from "./header"
-
 import Image from "next/image"
 import Typed from "typed.js"
 import Form from "./form"
@@ -15,15 +14,14 @@ const Hero2 = ( ) => {
 
         const typed = new Typed(TypedElement.current, {
             strings: [
-                "Team Meetings",
-                "Brainstorming Sessions",
-                "Client Onboarding",
-                "Product Demos"
+                "Blogs",
+                "Articles",
+                "Text",
 
             ],
             startDelay: 0,
-            typeSpeed: 50,
-            backSpeed: 80,
+            typeSpeed: 120,
+            backSpeed: 120,
             backDelay: 500,
             loop: true,
         });
@@ -36,18 +34,21 @@ const Hero2 = ( ) => {
   
 
     return ( 
-<section class=" bg-gradient-to-r from-white to-white body-font h-screen">
+<section class=" bg-gradient-to-r from-white to-white bg-black body-font h-screen">
     <Header></Header>
-  <div class="container mx-auto flex flex-col justify-evenly items-center text-center h-full">
+    
+  <div class="container mx-auto flex flex-col md:flex-row items-center  h-5/6">
+    
+  
 
-    <Audio></Audio>
-
-    <div class="w-full 2xl:w-10/12 lg:w-9/12 md:w-11/12  flex flex-col mb-16 items-center text-center text-black">
-        <h1 class="title-font mobile:text-xl sm:text-4xl text-3xl mb-4 font-bold">Transform Your Articles Into Engaging Podcasts With AI </h1>
-        <p class="mb-2 font-bold leading-relaxed text-gray-600 w-5/6"> Seamlessly synchronize web browsing sessions with your team, unlock real-time collaboration on all the Web Apps you <span className="text-red-400 text-lg">Love</span>. <br></br> <br></br> Enable <span className="text-sky-300 ">Shared Online Experiences</span> Like Never Before.</p>
+    <div class="w-full 2xl:w-10/12 lg:w-9/12 md:w-11/12  flex flex-col text-black md:text-start md:items-start text-center items-center">
+        <h1 class="title-font mobile:text-xl sm:text-5xl text-9xl  mb-8 font-bold text-gray-900">Turn Your <span ref={TypedElement}></span><br></br>Into Captivating Audio </h1>
+        <p class="mb-2 font-bold leading-relaxed text-gray-500 w-5/6"> Automatically turn any text into audio content using VoiceVerse, keep your audience engaged with our lifelike AI generated voices.</p>
         <Form></Form>
         <p class="text-sm mt-2 text-white mb-8 w-full"></p>
     </div>
+    <Audio></Audio>
+
   </div>
 </section>
     )

@@ -43,21 +43,21 @@ const Audio = () => {
         console.log("audio " + audioRef.current.currentTime)
         console.log("progress " + progressBarRef.current.value)
     }
-
+/*
     const onLoadedMetadata = () => {
         const time = audioRef.current.duration
         progressBarRef.current.max = time
         console.log(audioRef.current.duration)
         console.log(progressBarRef.current.max)
     }
-/*
+*/
     useEffect(() => {
         const time = audioRef.current.duration
         progressBarRef.current.max = time
         console.log(audioRef.current.duration)
         console.log(progressBarRef.current.max)
-    })
-*/
+    }, [])
+
     useEffect(() => {
         if (isPlaying) {
             audioRef.current.play()
@@ -72,15 +72,21 @@ const Audio = () => {
 
 
     return(
-        <div className="container w-6/12 h-16 bg-gradient-to-r from-gray-700 to-gray-900 rounded-xl shadow-2xl flex flex-row justify-between items-center text-center bg-black">
-            <button onClick={handlePlayPause} class="bg-blue-100 h-10 w-10 ml-3 shrink-0 focus:outline-none hover:bg-indigo-200 rounded-full shadow-2xl grid"> {isPlaying ? <Image className='w-8 h-8 place-self-center' src={play} ></Image> : <Image className='w-6 h-6 place-self-center' src={pause}></Image> }</button>
-            <div className='w-10/12 h-5 mx-4 text-white grid'> 
-        
-                <input  ref={progressBarRef} defaultValue="0" onChange={handleProgressBar} className="w-full h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 place-self-center" type="range" />
 
-
+        <div className='relative flex justify-center items-center'>
+            <div className='w-12/12'>
+            <img className='shadow-xl ' src="/image.png"></img>
             </div>
-            <audio onLoadedMetadata={onLoadedMetadata} src='/test-audio.mp3' ref={audioRef}></audio>
+            <div className="container absolute w-6/12 h-16 bg-gray-800 border-4 border-white rounded-xl shado flex flex-row justify-between items-center text-center">
+                <button onClick={handlePlayPause} class="hover:bg-indigo-800 bg-indigo-600 h-10 w-10 ml-3 shrink-0 focus:outline-none rounded-full shadow-2xl grid"> {isPlaying ? <Image className='w-6 h-6 place-self-center' src={pause}></Image> : <img className='w-5 h-5 ml-0.5 place-self-center' src={"/playW.png"} ></img> }</button>
+                <div className='w-10/12 mx-4 grid'> 
+            
+                    <input  ref={progressBarRef} defaultValue="0" onChange={handleProgressBar} className="w-full h-1 bg-gray-600 rounded-lg appearance-none range-sm place-self-center " type="range" />
+
+
+                </div>
+                <audio src='/test-audio.mp3' ref={audioRef}></audio>
+            </div>
         </div>
     )
 }
