@@ -45,7 +45,7 @@ const Audio = () => {
         progressBarRef.current.max = time
         console.log(audioRef.current.duration)
         console.log(progressBarRef.current.max)
-    }, [])
+    }, [audioRef])
 
     useEffect(() => {
         if (isPlaying) {
